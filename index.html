@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Check Subscription</title>
+</head>
+<body>
+  <h2>Garena Subscription Check</h2>
+  <input id="deviceId" placeholder="Enter your device ID">
+  <button onclick="check()">Check</button>
+  <p id="result"></p>
+
+  <script>
+    async function check() {
+      const id = document.getElementById("deviceId").value;
+      const res = await fetch(`https://926ea9b9-e96a-4296-af22-81f9ff6475b4-00-1niawl1q17wy7.pike.replit.dev/`);
+      const text = await res.text();
+      document.getElementById("result").innerText = "Status: " + text;
+    }
+  </script>
+</body>
+</html>
